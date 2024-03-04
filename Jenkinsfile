@@ -24,14 +24,14 @@ pipeline {
 
     stage('Maven build') {
       steps {
-        sh "${mvn}/bin/mvn clean package "
+        sh "${mvn} clean package "
       }
     }
 
     stage('SonarQube Analysis') {
       steps{
         withSonarQubeEnv('sonarqube') {
-        sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=java-jenkins  -Dsonar.projectName=java-jenkins -Dsonar.host.url=http://localhost:9000   -Dsonar.login=sqp_66f6fed3114b1362ce21b12ae95c64994395c96b"
+        sh "${mvn} clean verify sonar:sonar -Dsonar.projectKey=java-jenkins  -Dsonar.projectName=java-jenkins -Dsonar.host.url=http://localhost:9000   -Dsonar.login=sqp_66f6fed3114b1362ce21b12ae95c64994395c96b"
       }
     }
      
