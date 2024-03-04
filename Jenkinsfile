@@ -31,7 +31,7 @@ pipeline {
     stage('SonarQube Analysis') {
       steps{
         withSonarQubeEnv('sonarqube') {
-        sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=toto-gros  -Dsonar.projectName=toto-gros -Dsonar.host.url=http://localhost:9000  -Dsonar.login=sqp_7d812550865217883c41a6aa915dc19f441abdc9"
+        sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=java-jenkins  -Dsonar.projectName=java-jenkins -Dsonar.host.url=http://localhost:9000   -Dsonar.login=sqp_66f6fed3114b1362ce21b12ae95c64994395c96b"
       }
     }
      
